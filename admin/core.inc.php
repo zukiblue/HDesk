@@ -92,9 +92,9 @@ unset( $d, $rootpath, $class_path, $include_path, $include_path2, $include_pear,
     //    lang_load( lang_get_default() );
         lang_load( 'english' );   
     }
-/*   
-    #include required files
+    #include required files    
     require('class.osticket.php');
+/*   
     require('class.ostsession.php');
     #require(INCLUDE_DIR.'class.usersession.php');
     
@@ -106,8 +106,8 @@ unset( $d, $rootpath, $class_path, $include_path, $include_path2, $include_pear,
     require(INCLUDE_DIR.'class.http.php');
 */
     require('class.nav.php');
+    require('class.format.php'); //format helpers
 /*
-    require(INCLUDE_DIR.'class.format.php'); //format helpers
     require(INCLUDE_DIR.'class.validator.php'); //Class to help with basic form input validation...please help improve it.
     require(INCLUDE_DIR.'class.mailer.php');
  
@@ -127,9 +127,10 @@ unset( $d, $rootpath, $class_path, $include_path, $include_path2, $include_pear,
     $ferror=null;
     if (!db_connect(DBHOST,DBUSER,DBPASS) || !db_select_database(DBNAME)) {
         $ferror='Unable to connect to the database';
-    //} elseif(!($ost=osTicket::start(1)) || !($cfg = $ost->getConfig())) {
-    //    $ferror='Unable to load config info from DB. Get tech support.';
+    } elseif(!($ost=osTicket::start(1)) ) {//|| !($cfg = $ost->getConfig())) {
+        $ferror='Unable to load config info from DB. Get tech support.';
     }
+
     if($ferror) { //Fatal error
         //try alerting admin using email in config file
         $msg=$ferror."\n\n".THISPAGE;

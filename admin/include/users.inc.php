@@ -79,7 +79,7 @@ else
 */
 ?>
 <form action="users.php" method="POST" name="users" >
- <?php csrf_token(); ?>
+ <?php /*csrf_token();*/ ?>
  <input type="hidden" id="action" name="a" value="" >
  <table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
     <caption><?php echo $showing; ?></caption>
@@ -108,13 +108,13 @@ else
                 <td width=7px>  
                     <input type="checkbox" class="ckb" name="ids[]" value="<?php echo $row['id']; ?>" <?php echo $sel?'checked="checked"':''; ?> >
        
-                <td><a href="users.php?id=<?php echo $row['id']; ?>"><?php echo Format::htmlchars($row['name']); ?></a>&nbsp;</td>
+                <td><a href="users.php?id=<?php echo $row['id']; ?>"><?php echo $row['name']; ?></a>&nbsp;</td>
                 <td><?php echo $row['username']; ?></td>
                 <td><?php echo $row['active']?'Active':'<b>Inactive</b>'; ?>&nbsp;<?php echo $row['onvacation']?'<small>(<i>vacation</i>)</small>':''; ?></td>
                 <td></td>
                 <td></td>
-                <td><?php echo Format::db_date($row['creationdate']); ?></td>
-                <td><?php echo Format::db_datetime($row['lastlogin']); ?>&nbsp;</td>
+                <td><?php /*echo Format::db_date($row['creationdate']);*/ ?></td>
+                <td><?php /*echo Format::db_datetime($row['lastlogin']);*/ ?>&nbsp;</td>
                </tr>
             <?php
             } //end of while.

@@ -22,13 +22,14 @@ if($rec && $_REQUEST['a']!='add'){
     $info['isvisible']=1;
     $info['isadmin']=0; 
 }
-//die(var_dump($_POST));
-//$info=Format::htmlchars(($errors && $_POST)?$_POST:$info);
-   
+
+//die(var_dump($info));
+$info=Format::htmlchars(($errors && $_POST)?$_POST:$info);
+ 
 ?>
 
 <form action="users.php" method="post" id="save" autocomplete="off">
- <?php csrf_token(); ?>
+ <?php/* csrf_token();*/ ?>
  <input type="hidden" name="a" value="<?php echo $action; ?>">
  <input type="hidden" name="id" value="<?php echo $info['id']; ?>">
  <h2><?php echo lang('user_title');?></h2>

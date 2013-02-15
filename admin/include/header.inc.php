@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="pragma" content="no-cache" />
-    <title><?php echo ($ost && ($title=$ost->getPageTitle()))?$title:'osTicket :: Staff Control Panel'; ?></title>
+    <title><?php echo ($ost && ($title=$ost->getPageTitle()))?$title:'Control Panel'; ?></title>
     <!--[if IE]>
     <style type="text/css">
         .tip_shadow { display:block !important; }
@@ -18,19 +18,20 @@
     <script type="text/javascript" src="./js/nicEdit.js"></script>
     <script type="text/javascript" src="./js/bootstrap-typeahead.js"></script>
     <script type="text/javascript" src="./js/scp.js"></script>
+    -->
     <link rel="stylesheet" href="./css/scp.css" media="screen">
     <link rel="stylesheet" href="./css/typeahead.css" media="screen">
-    <link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
-    <link type="text/css" rel="stylesheet" href="../css/font-awesome.css">
+    <link type="text/css" href="./css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="./css/font-awesome.css">
     <link type="text/css" rel="stylesheet" href="./css/dropdown.css">
-    <script type="text/javascript" src="./js/jquery.dropdown.js"></script>
-    -->
+    <!-- script type="text/javascript" src="./js/jquery.dropdown.js"></script -->
+   
     <?php
-    /*
+        
       if($ost && ($headers=$ost->getExtraHeaders())) {
      
         echo "\n\t".implode("\n\t", $headers)."\n";
-    }*/
+       }
     ?>
 </head>
 <body>
@@ -44,7 +45,7 @@
         echo sprintf('<div id="notice_bar">%s</div>', $ost->getNotice());
     ?>
     <div id="header">
-        <a href="index.php" id="logo">osTicket - Customer Support System</a>
+        <a href="index.php" id="logo">Support System</a>
         <?php 
         /*	if( !db_is_connected() ) {
 		return;
@@ -64,7 +65,7 @@
             | <a href="index.php">Staff Panel</a>
             <?php } ?>
             | <a href="profile.php">My Preferences</a>
-            | <a href="logout.php?auth=<?php echo md5($ost->getCSRFToken().SECRET_SALT.session_id()); ?>">Log Out</a>
+            | <a href="logout.php?auth=<?php /*echo md5($ost->getCSRFToken().SECRET_SALT.session_id());*/ ?>">Log Out</a>
         </p>
     </div>
     <ul id="nav">
@@ -81,8 +82,9 @@
                     echo "\n</ul>\n";
                 }
                 echo "\n</li>\n";
-            }
-        } ?>
+            }            
+        } 
+        ?>
     </ul>
     <ul id="sub_nav">
         <?php
@@ -105,10 +107,11 @@
                 echo sprintf('<li><a class="%s" href="%s" title="%s" >%s</a></li>',$class,$item['href'],$item['title'],$item['desc']);
             }
         }
+        
         ?>
     </ul>
     <div id="content">
-        <?php if($errors['err']) { ?>
+        <?php if($errors['err']) { ?>        
             <div id="msg_error"><?php echo $errors['err']; ?></div>
         <?php }elseif($msg) { ?>
             <div id="msg_notice"><?php echo $msg; ?></div>

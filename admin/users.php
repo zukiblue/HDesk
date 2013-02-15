@@ -27,16 +27,17 @@ if ( $mode==='edit' ) {
             }elseif(!$errors['err']){
                 $errors['err']=lang(users_msg_upderror);
             }            
-/*            if($errors['err']) {            
+            if($errors['err']) {            
                 $mode = 'edit';
                 if ( !($rec = $users->loadRecord($_POST['id'])) ) {
                     $errors['err'] = 'Unknown or invalid ID.';
                 }
-            }*/
+            }
             break;
         case 'add':
             if(($id=$users->add($_POST,$errors))){
-                $msg=Format::htmlchars($_POST['name']).lang(users_msg_addok);
+                //$msg=Format::htmlchars($_POST['name']).lang(users_msg_addok);
+                $msg=$_POST['name'].lang(users_msg_addok);
             }elseif(!$errors['err']){
                 $errors['err']=lang('users_msg_adderror');
             }
@@ -57,9 +58,9 @@ else
 $nav->setTabActive('staff');
 
 require('header.inc.php');
-
 //$auth->requireAuthentication(0);
 require($page);
+        
 
 include('footer.inc.php');
 ?>

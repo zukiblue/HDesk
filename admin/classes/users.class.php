@@ -55,9 +55,12 @@ class Users extends BaseDB{
     }
 
     function save($id, $vars, &$errors) {
-        $vars['username']=Format::striptags($vars['username']);
+/*        $vars['username']=Format::striptags($vars['username']);
         $vars['name']=Format::striptags($vars['name']);
-        $vars['signature']=Format::striptags($vars['signature']);
+        $vars['signature']=Format::striptags($vars['signature']);*/
+        $vars['username']=$vars['username'];
+        $vars['name']=$vars['name'];
+        $vars['signature']=$vars['signature'];
 
         if(!$vars['username'])      
             $errors['username']='Username required';
@@ -65,8 +68,8 @@ class Users extends BaseDB{
         if(!$vars['name'])      
             $errors['name']='Real name required';
         
-        if(!$vars['email'] || !Validator::is_email($vars['email']))
-            $errors['email']='Valid email required';
+     //   if(!$vars['email'] || !Validator::is_email($vars['email']))
+     //       $errors['email']='Valid email required';
         //elseif(Email::getIdByEmail($vars['email']))
         //    $errors['email']='Already in-use as system email';
         //elseif(($uid=Staff::getIdByEmail($vars['email'])) && $uid!=$this->getId())
