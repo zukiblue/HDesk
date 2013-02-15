@@ -12,6 +12,7 @@
     <![endif]-->
     <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../js/jquery-ui-1.8.18.custom.min.js"></script>
+    <!--
     <script type="text/javascript" src="../js/jquery.multifile.js"></script>
     <script type="text/javascript" src="./js/tips.js"></script>
     <script type="text/javascript" src="./js/nicEdit.js"></script>
@@ -23,10 +24,13 @@
     <link type="text/css" rel="stylesheet" href="../css/font-awesome.css">
     <link type="text/css" rel="stylesheet" href="./css/dropdown.css">
     <script type="text/javascript" src="./js/jquery.dropdown.js"></script>
+    -->
     <?php
-    if($ost && ($headers=$ost->getExtraHeaders())) {
+    /*
+      if($ost && ($headers=$ost->getExtraHeaders())) {
+     
         echo "\n\t".implode("\n\t", $headers)."\n";
-    }
+    }*/
     ?>
 </head>
 <body>

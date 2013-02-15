@@ -13,7 +13,7 @@ $g_anonymousaccount = 'guest';
 
 
 //Define your canonical domain including trailing slash!, example:
-$domain= "http://127.0.0.1/hd/scp/";
+$domain= "http://127.0.0.1/hdesk/admin/";
 
 //Define sending email notification to webmaster
 

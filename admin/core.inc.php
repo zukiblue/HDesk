@@ -70,6 +70,7 @@ unset( $d, $rootpath, $class_path, $include_path, $include_path2, $include_pear,
     //ini_set('session.cookie_path','/osticket/');
 */
 
+
     #Error reporting...Good idea to ENABLE error reporting to a file. i.e display_errors should be set to false
     $error_reporting = E_ALL & ~E_NOTICE;
     if (defined('E_STRICT')) # 5.4.0
@@ -91,7 +92,7 @@ unset( $d, $rootpath, $class_path, $include_path, $include_path2, $include_pear,
     //    lang_load( lang_get_default() );
         lang_load( 'english' );   
     }
-   
+/*   
     #include required files
     require('class.osticket.php');
     require('class.ostsession.php');
@@ -103,27 +104,31 @@ unset( $d, $rootpath, $class_path, $include_path, $include_path2, $include_pear,
     require(INCLUDE_DIR.'class.misc.php');
     require(INCLUDE_DIR.'class.timezone.php');
     require(INCLUDE_DIR.'class.http.php');
-    require(INCLUDE_DIR.'class.nav.php');
+*/
+    require('class.nav.php');
+/*
     require(INCLUDE_DIR.'class.format.php'); //format helpers
     require(INCLUDE_DIR.'class.validator.php'); //Class to help with basic form input validation...please help improve it.
     require(INCLUDE_DIR.'class.mailer.php');
-    require(INCLUDE_DIR.'mysql.php');
-
+ 
+ */
+    require('mysql.php');
+  
     #CURRENT EXECUTING SCRIPT.
-    define('THISPAGE', Misc::currentURL());
+    //define('THISPAGE', Misc::currentURL());
     define('THISURI', $_SERVER['REQUEST_URI']);
 
     # Start anonymous (if active)
     if ( !isset( $g_login_anonymous ) ) {
 	$g_login_anonymous = true;
     }
-  
+
     #Connect to the DB && get configuration from database
     $ferror=null;
     if (!db_connect(DBHOST,DBUSER,DBPASS) || !db_select_database(DBNAME)) {
         $ferror='Unable to connect to the database';
-    } elseif(!($ost=osTicket::start(1)) || !($cfg = $ost->getConfig())) {
-        $ferror='Unable to load config info from DB. Get tech support.';
+    //} elseif(!($ost=osTicket::start(1)) || !($cfg = $ost->getConfig())) {
+    //    $ferror='Unable to load config info from DB. Get tech support.';
     }
     if($ferror) { //Fatal error
         //try alerting admin using email in config file
@@ -136,11 +141,11 @@ unset( $d, $rootpath, $class_path, $include_path, $include_path2, $include_pear,
    require('auth.class.php');
     
     //Init
-    $session = $ost->getSession();
+    //$session = $ost->getSession();
 
     //System defaults we might want to make global//
     #pagenation default - user can overwrite it!
-    define('DEFAULT_PAGE_LIMIT', $cfg->getPageSize()?$cfg->getPageSize():25);
+    //define('DEFAULT_PAGE_LIMIT', $cfg->getPageSize()?$cfg->getPageSize():25);
 
     #Cleanup magic quotes crap.
 /*    if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) {
@@ -153,9 +158,8 @@ unset( $d, $rootpath, $class_path, $include_path, $include_path2, $include_pear,
 if(!defined('INCLUDE_DIR')) die('Fatal error... invalid setting.');
 
 /*Some more include defines specific to staff only */
-define('STAFFINC_DIR',INCLUDE_DIR.'staff/');
+//define('STAFFINC_DIR',INCLUDE_DIR.'staff/');
 define('SCP_DIR',str_replace('//','/',dirname(__FILE__).'/'));
-
 /* Define tag that included files can check */
 define('OSTSCPINC',TRUE);
 define('OSTSTAFFINC',TRUE);
@@ -166,8 +170,8 @@ define('OSTSTAFFINC',TRUE);
 /* include what is needed on staff control panel */
 //require_once('user.class.php');
 //require_once('group.class.php');
-require_once(INCLUDE_DIR.'class.nav.php');
-require_once(INCLUDE_DIR.'class.csrf.php');
+//require_once(INCLUDE_DIR.'class.nav.php');
+//require_once(INCLUDE_DIR.'class.csrf.php');
 
 /* First order of the day is see if the user is logged in and with a valid session.
     * User must be valid staff beyond this point 
@@ -249,7 +253,7 @@ $msg=$warn=$sysnotice='';
 $tabs=array();
 $submenu=array();
 $exempt = in_array(basename($_SERVER['SCRIPT_NAME']), array('logout.php', 'ajax.php', 'logs.php', 'upgrade.php'));
-
+/*
 if($ost->isUpgradePending() && !$exempt) {
     $errors['err']=$sysnotice='System upgrade is pending <a href="upgrade.php">Upgrade Now</a>';
     require('upgrade.php');
@@ -257,7 +261,7 @@ if($ost->isUpgradePending() && !$exempt) {
 } elseif($cfg->isHelpDeskOffline()) {
     $sysnotice='<strong>System is set to offline mode</strong> - Client interface is disabled and ONLY admins can access staff control panel.';
     $sysnotice.=' <a href="settings.php">Enable</a>.';
-}
+}*/
 
 $nav = new StaffNav($user);
 //Check for forced password change.
@@ -268,8 +272,8 @@ $nav = new StaffNav($user);
     require('profile.php'); //profile.php must request this file as require_once to avoid problems.
     exit;
 }*/
-$ost->setWarning($sysnotice);
-$ost->setPageTitle('osTicket :: Staff Control Panel');
+//$ost->setWarning($sysnotice);
+//$ost->setPageTitle('osTicket :: Staff Control Panel');
 
 // to use on childs
 function setMode() {

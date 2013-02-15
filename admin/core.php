@@ -54,11 +54,12 @@ if($ost->isUpgradePending()) {
 }
 */
 //System notice displayed as a warning (if any).
-$ost->setWarning($sysnotice);
+//$ost->setWarning($sysnotice);
 
 //Admin navigation - overwrites what was set in staff.inc.php
 $nav = new AdminNav($thisstaff);
 
 //Page title.
-$ost->setPageTitle('osTicket :: Admin Control Panel');
+//$ost->setPageTitle('osTicket :: Admin Control Panel');
+
 ?>
