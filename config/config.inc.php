@@ -29,5 +29,13 @@ define('TABLE_PREFIX','hd_');
 #$g_allowanonymouslogin = 0;
 #$g_anonymousaccount = 'guest';
 
+# Redefine base url
+# Ex: $domain = $domain.'/hdesk/';
+$domain = $domain.'/hdesk/';
+
+$loginpage_url = $domain.$loginpage;
+$forbidden_url = $domain.$forbiddenpage;
+# Debug information
+$g_debug = 1;
 
 ?>

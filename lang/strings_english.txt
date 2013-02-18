@@ -17,9 +17,9 @@ $main_title3 = 'Move3';
 $users_title = 'Users';
 $users_msg_invalid  = 'Unknown or invalid user.';
 $users_msg_updok    = 'User updated successfully';
-$users_msg_upderror = 'Unable to update user. Correct any error(s) below and try again!';
+$users_msg_upderror = 'Unable to update user!';
 $users_msg_addok    = 'added successfully';
-$users_msg_adderror = 'Unable to add user. Correct any error(s) below and try again.';
+$users_msg_adderror = 'Unable to add user!';
 $users_msg_badaction= 'Unknown action/command';
 // User
 $user_title        = 'User Account';

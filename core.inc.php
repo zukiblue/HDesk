@@ -125,7 +125,6 @@ unset( $d, $rootpath, $class_path, $include_path, $include_path2, /*$include_pea
     if ( !isset( $g_login_anonymous ) ) {
 	$g_login_anonymous = true;
     }
-
     #Connect to the DB && get configuration from database
     $ferror=null;
     if (!db_connect(DBHOST,DBUSER,DBPASS) || !db_select_database(DBNAME)) {
@@ -135,6 +134,7 @@ unset( $d, $rootpath, $class_path, $include_path, $include_path2, /*$include_pea
     }
 
     if($ferror) { //Fatal error
+
         //try alerting admin using email in config file
         $msg=$ferror."\n\n".THISPAGE;
         Mailer::sendmail(ADMIN_EMAIL, 'osTicket Fatal Error', $msg, sprintf('"osTicket Alerts"<%s>', ADMIN_EMAIL));
@@ -142,7 +142,8 @@ unset( $d, $rootpath, $class_path, $include_path, $include_path2, /*$include_pea
         die("<b>Fatal Error:</b> Contact system administrator. ". $msg);
         exit;
     }
-   require('auth.class.php');
+
+    require('auth.class.php');
     
     //Init
     //$session = $ost->getSession();

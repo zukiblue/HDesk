@@ -12,10 +12,11 @@
 require_once('../core.php');
 
 require('header.inc.php');
-//$auth->requireAuthentication(0);
+$auth->requireAuthentication(0);
 //require($page);
 
 echo '<center><img src="'.dynRoot().'img/index.jpg"></center>';
 
 include('footer.inc.php');
+
 ?>

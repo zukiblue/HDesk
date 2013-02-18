@@ -49,7 +49,7 @@
 }
 
 #nav .active a {
-    background:url(../images/tab-bg.png) top left no-repeat;
+    background:url(../img/tab-bg.png) top left no-repeat;
     color:#004a80;
 }
 
@@ -75,7 +75,7 @@
 }
 
 #nav .inactive:hover {
-    background:url(../images/tab-bg.png) bottom left no-repeat;
+    background:url(../img/tab-bg.png) bottom left no-repeat;
 }
 
 #nav .inactive:hover ul {

@@ -32,7 +32,7 @@ html {
 
 body {
     -webkit-font-smoothing:antialiased;
-    background:url(../images/login-background.jpg) top left repeat-x #fff;
+    background:url(../img/login-background.jpg) top left repeat-x #fff;
     font-size: 16px;
     font-smoothing:antialiased;
     height:100%;
@@ -76,7 +76,7 @@ h1 {
     height:72px;
     text-decoration:none;
     text-indent:-9999px;
-    background:url(../images/login-logo.png);
+    background:url(../img/logo_login.png);
     margin:0 auto 1em auto;
 }
 
@@ -118,7 +118,7 @@ input.submit {
     font-weight:bold;
     border:1px solid #666666;
     padding:0 10px;
-    background: url('../images/grey_btn_bg.png?1312910883') top left repeat-x;
+    background: url('../img/grey_btn_bg.png?1312910883') top left repeat-x;
     color: #333;
 }
 

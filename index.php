@@ -11,10 +11,11 @@
 //header( 'Location: ./admin/') ;
 require_once('core.php');
 
-require('header.inc.php');
+require('header_main.inc.php');
 //$auth->requireAuthentication(0);
 //require($page);
 echo '<center><img src="img/index.jpg"></center>';
 
-include('footer.inc.php');
+include('footer_main.inc.php');
+
 ?>

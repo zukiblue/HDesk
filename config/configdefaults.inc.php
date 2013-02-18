@@ -11,12 +11,20 @@ $g_logo_url = '';
 $g_allowanonymouslogin = 1;
 $g_anonymousaccount = 'guest';
 
+$g_debug = 0;           // 0 - No, 1 - File, 2 - Screen
+$g_debug_level = 5;
+$g_debug_phpinfo = 0;
 
 //Define your canonical domain including trailing slash!, example:
-$domain= "http://127.0.0.1/hdesk/admin/";
+//$domain= "http(s)://127.0.0.1/"
+$domain = 'http://';
+if(isset($_SERVER['HTTPS']))
+    if ($_SERVER["HTTPS"] == "on") 
+        $domain = 'https://';
+$domain = $domain.$_SERVER['SERVER_NAME'];
+
 
 //Define sending email notification to webmaster
-
 $email='youremail@example.com';
 $subject='New user registration notification';
 $from='From: www.example.com';
@@ -36,11 +44,9 @@ $maxfailedattempt=5;
 $sessiontimeout=1800;
 
 ////////////////////////////////////
-//END OF USER CONFIGURATION/////////
 ////////////////////////////////////
 
-$loginpage_url= $domain.'login.php';
-$forbidden_url= $domain.'403forbidden.php';
-#die($loginpage_url);
+$loginpage= 'login.php';
+$forbiddenpage= '403forbidden.php';
 
 ?>

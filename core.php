@@ -63,13 +63,21 @@ $nav = new AdminNav($thisstaff);
 //$ost->setPageTitle('osTicket :: Admin Control Panel');
 
 function dynRoot() 
-{ 
-  $levels = substr_count($_SERVER['PHP_SELF'],"/"); 
-
-  for ($i=1; $i < $levels - 1; $i++) 
-  { 
-    $relativeDir .= "../"; 
-  } 
+{   /*
+     /hdesk/index.php         $levels = 2
+     /hdesk/admin/users.php   $levels = 3
+    */
+  $levels = substr_count($_SERVER['PHP_SELF'],"/") - 3; 
+  //echo 'sss'.$levels;
+  if ($levels == 0) {
+      $relativeDir .= "./";      
+  }
+  else {
+    for ($i=1; $i <= $levels; $i++) 
+    { 
+      $relativeDir .= "../"; 
+    } 
+  }
 
   return $relativeDir; 
 }    

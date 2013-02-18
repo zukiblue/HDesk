@@ -1,51 +1,14 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="pragma" content="no-cache" />
-    <title><?php echo ($ost && ($title=$ost->getPageTitle()))?$title:'Control Panel'; ?></title>
-    <!--[if IE]>
-    <style type="text/css">
-        .tip_shadow { display:block !important; }
-    </style>
-    <![endif]-->
-    <script type="text/javascript" src="<?php echo dynRoot();?>js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="<?php echo dynRoot();?>js/jquery-ui-1.8.18.custom.min.js"></script>
-    <link type="text/css" href="<?php echo dynRoot();?>css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
-   
-    
+<?php include 'header1begin.tpl'; ?>
 
-    <base href="http://127.0.0.1/HDesk/">
+    <script type="text/javascript" src="<?php echo $domain?>js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="<?php echo $domain;?>js/jquery-ui-1.8.18.custom.min.js"></script>
+    <link type="text/css" href="<?php echo $domain;?>css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="<?php echo dynRoot();?>css/main.css" media="screen">
-    <link rel="stylesheet" href="<?php echo dynRoot();?>css/nav.css" media="screen">
-    <link rel="stylesheet" href="<?php echo dynRoot();?>css/tables.css" media="screen">
+    <link rel="stylesheet" href="<?php echo $domain;?>css/main.css" media="screen">
+    <link rel="stylesheet" href="<?php echo $domain;?>css/nav.css" media="screen">
+    <link rel="stylesheet" href="<?php echo $domain;?>css/tables.css" media="screen">
   
-    <!--
-
-    
-    <link rel="stylesheet" href="/css/scp.css" media="screen">
-    
-    <script type="text/javascript" src="../js/jquery.multifile.js"></script>
-    <script type="text/javascript" src="./js/tips.js"></script>
-    <script type="text/javascript" src="./js/nicEdit.js"></script>
-    <script type="text/javascript" src="./js/bootstrap-typeahead.js"></script>
-    <script type="text/javascript" src="./js/scp.js"></script>    
-    
-    <link rel="stylesheet" href="./css/typeahead.css" media="screen">
-    <link type="text/css" rel="stylesheet" href="./css/font-awesome.css">
-    <link type="text/css" rel="stylesheet" href="./css/dropdown.css">
-   -->
-  
-    <!-- script type="text/javascript" src="./js/jquery.dropdown.js"></script -->
-    
-    <?php        
-      if($ost && ($headers=$ost->getExtraHeaders())) {  
-        echo "\n\t".implode("\n\t", $headers)."\n";
-      }
-    ?>
-</head>
+<?php include 'header9end.tpl'; ?>
 <body>
 <div id="container">
     <div id="header">
