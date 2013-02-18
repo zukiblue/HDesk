@@ -11,12 +11,12 @@
 //header( 'Location: users.php' ) ;
 require_once('../core.php');
 
-require('header.inc.php');
+require('header_main.inc.php');
 $auth->requireAuthentication(0);
 //require($page);
 
 echo '<center><img src="'.dynRoot().'img/index.jpg"></center>';
 
-include('footer.inc.php');
+include('footer_main.inc.php');
 
 ?>

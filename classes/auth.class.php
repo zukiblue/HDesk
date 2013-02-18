@@ -40,17 +40,16 @@ class Auth {
     function checkBasicAuthentication(){
         global $loginpage_url;
         global $forbidden_url;
-        // primary checks
-        // wait for call @ requireAuthentication($level)
+        // wait for call @ requireAuthentication($requiredlevel)
         if ( ($_SESSION['loggedin'])==TRUE ) { //valid user has logged-in to the website
             //Check for unauthorized use of user sessions
             if ( $this->checkUnautorizedAccess() ) {
                 //This is unauthorized access, Logout
                 $this->logout();
                 exit;    
-            }        
-            //Session Lifetime control for inactivity
+            } 
             
+            //Session Lifetime control for inactivity            
             if ( $this->checkSessionTimeout() ) {            
                 //redirect the user back to login page for re-authentication
                 $this->logout();
@@ -187,7 +186,7 @@ class Auth {
             } else {
                 //has some records, increment attempts
                 $this->loginattempts_ip= $this->loginattempts_ip + 1;
-       //  $this->HandleError($this->loginattempts_ip);
+//         $this->HandleError($this->loginattempts_ip);
                 mysql_query("UPDATE `ipcheck` SET `failedattempts` = '$this->loginattempts_ip' WHERE `loggedip` = '$iptocheck'");
             }
         }

@@ -1,6 +1,5 @@
 <?php
 require_once('core.php');
-                
 //if(!defined('INCLUDE_DIR')) die('Access Denied.');
 //global $user;
 //require_once('user.class.php');
@@ -24,6 +23,7 @@ if ((isset($_POST["username"])) && (isset($_POST["passwd"])) ) {//&& ($_SESSION[
     }
 */
     $msg = $errors['err']?$errors['err']:'Invalid login';
+    echo $msg;
 }
 //define("OSTSCPINC",TRUE); //Make includes happy!
 require('header_simple.inc.php');

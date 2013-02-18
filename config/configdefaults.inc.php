@@ -38,7 +38,7 @@ $recaptcha_showafter = 2; // failed attempts
 $length_salt=15;
 
 //maximum number of failed attempts to ban brute force attackers
-$maxfailedattempt=5;
+$maxfailedattempt=50;
 
 //session timeout in seconds
 $sessiontimeout=1800;
