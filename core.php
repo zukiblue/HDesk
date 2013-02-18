@@ -62,4 +62,17 @@ $nav = new AdminNav($thisstaff);
 //Page title.
 //$ost->setPageTitle('osTicket :: Admin Control Panel');
 
+function dynRoot() 
+{ 
+  $levels = substr_count($_SERVER['PHP_SELF'],"/"); 
+
+  for ($i=1; $i < $levels - 1; $i++) 
+  { 
+    $relativeDir .= "../"; 
+  } 
+
+  return $relativeDir; 
+}    
+
+
 ?>

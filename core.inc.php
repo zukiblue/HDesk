@@ -1,5 +1,6 @@
 <?php  
 if(basename($_SERVER['SCRIPT_NAME'])==basename(__FILE__)) die('Access denied..');
+
 // Stats - for page request time
 $g_request_time = microtime(true);
 
@@ -31,22 +32,24 @@ define('UPGRADE_DIR', INCLUDE_DIR.'upgrader/');
 define('SQL_DIR', UPGRADE_DIR.'sql/');// realpath(dirname(__FILE__))).'/'); #Get real path for root dir ---linux and windows
 
 // Set include paths
-$class_path  = $rootpath.'classes'.$d;
-$include_path  = $rootpath.'..'.$d.'include'.$d;
-$include_path2 = $rootpath.'include'.$d;
-$include_pear  = $rootpath.'..'.$d.'include'.$d.'/pear'.$d;
+$class_path   = $rootpath.'classes'.$d;
+$class_path2  = $rootpath.'admin'.$d.'classes'.$d;
+$include_path  = $rootpath.'include'.$d;
+$include_path2 = $rootpath.'admin'.$d.'include'.$d;
+//$include_pear  = $rootpath.'..'.$d.'include'.$d.'/pear'.$d;
 
 $path = array($class_path,
+              $class_path2,
               $include_path,
               $include_path2,
-              $include_pear,
+  //            $include_pear,
               get_include_path()
              );
 set_include_path( implode( PATH_SEPARATOR, $path ) ); // ';' on Win, ':' on Linux,...
+//echo var_dump($path);   
 
 // Unset global variables that are no longer needed.
-unset( $d, $rootpath, $class_path, $include_path, $include_path2, $include_pear, $path );
-   
+unset( $d, $rootpath, $class_path, $include_path, $include_path2, /*$include_pear,*/ $path );
 //// OLD main.inc.php
 //commented
 /*
@@ -106,7 +109,7 @@ unset( $d, $rootpath, $class_path, $include_path, $include_path2, $include_pear,
     require(INCLUDE_DIR.'class.http.php');
 */
     require('class.nav.php');
-    require('class.format.php'); //format helpers
+ //   require('class.format.php'); //format helpers
 /*
     require(INCLUDE_DIR.'class.validator.php'); //Class to help with basic form input validation...please help improve it.
     require(INCLUDE_DIR.'class.mailer.php');

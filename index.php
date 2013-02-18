@@ -8,14 +8,13 @@
 
 **************************************************************************/
 
-//header( 'Location: users.php' ) ;
-require_once('../core.php');
+//header( 'Location: ./admin/') ;
+require_once('core.php');
 
 require('header.inc.php');
 //$auth->requireAuthentication(0);
 //require($page);
-
-echo '<center><img src="'.dynRoot().'img/index.jpg"></center>';
+echo '<center><img src="img/index.jpg"></center>';
 
 include('footer.inc.php');
 ?>

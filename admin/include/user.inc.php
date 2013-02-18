@@ -24,7 +24,9 @@ if($rec && $_REQUEST['a']!='add'){
 }
 
 //die(var_dump($info));
-$info=Format::htmlchars(($errors && $_POST)?$_POST:$info);
+
+//$info=Format::htmlchars(($errors && $_POST)?$_POST:$info);
+$info=($errors && $_POST)?$_POST:$info;
  
 ?>
 

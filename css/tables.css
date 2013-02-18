@@ -1,0 +1,85 @@
+/* 
+    Document   : tables
+    Created on : 15/Fev/2013, 22:58:40
+    Author     : p
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+table { vertical-align:top; }
+
+table.list {
+    clear:both;
+    background:#ccc;
+    margin: 2px 0;
+    border-bottom: 1px solid #ccc;
+    font-family:arial, helvetica, sans-serif;
+    font-size:10pt;
+}
+
+table.list caption {
+    text-align:left;
+    padding:5px;
+    background:#929292;
+    color:#fff;
+    font-weight:bold;
+}
+
+table.list thead th {
+    background-color:#eee;
+    color:#000;
+    text-align:left;
+    vertical-align:top;
+}
+
+table.list th a {
+
+    text-decoration:none;
+    color:#000;
+}
+
+table.list thead th a { padding: 3px; display: block; color: #000; background: url('../images/asc_desc.gif') 100% 50% no-repeat; }
+
+table.list thead th a.asc { background: url('../images/asc.gif') 100% 50% no-repeat #cfe6ff; }
+table.list thead th a.desc { background: url('../images/desc.gif') 100% 50% no-repeat #cfe6ff; }
+table.list tbody td {
+    background:#fff;
+    border:1px solid #fff;
+    padding:1px;
+    vertical-align:top;
+}
+
+table.list tbody td { background: #fff; padding: 1px; padding-left:2px; vertical-align: top; }
+table.list tbody tr.odd td { background-color: #f0faff; }
+table.list tbody tr:hover td { background: #ffe; }
+table.list tbody tr.odd:hover td { background: #ffd; }
+/* row highlighting on hover + select */
+table.list tbody tr:hover td, table.list tbody tr.highlight td {  background: #FFFFDD; }
+/* disabled highlighting on nohover */
+table.list tbody tr:hover td.nohover, table.list tbody tr.highlight td.nohover {}
+
+
+table.list tfoot td {
+    background:#eee;
+    padding: 2px;
+}
+
+table.list tbody td.webticket, table.list tbody tr.row1 td.webticket {
+    text-indent:20px;
+    background:url(../images/icons/ticket_source_web.gif) 0 50% no-repeat #fff;
+}
+
+table.list tbody td.emailticket, table.list tbody tr.row1 td.emailticket {
+    text-indent:20px;
+    background:url(../images/icons/ticket_source_email.gif) 0 50% no-repeat;
+}
+
+table.list tbody td.phoneticket, table.list tbody tr.row1 td.phoneticket {
+    text-indent:20px;
+    background:url(../images/icons/ticket_source_phone.gif) 0 50% no-repeat;
+}
+
+table.list tbody td.otherticket, table.list tbody tr.row1 td.otherticket {
+    text-indent:20px;
+    background:url(../images/icons/ticket_source_other.gif) 0 50% no-repeat;
+}

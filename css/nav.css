@@ -1,0 +1,131 @@
+/* 
+    Document   : nav
+    Created on : 15/Fev/2013, 22:56:35
+    Author     : p
+    Description:
+        Purpose of the stylesheet follows.
+*/
+#nav, #sub_nav {
+    clear:both;
+    margin:0;
+    padding:0 20px;
+    height:26px;
+    line-height:26px;
+    border-left:1px solid #aaa;
+    border-right:1px solid #aaa;
+}
+
+#nav .active, #sub_nav li {
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:inline;
+}
+
+#nav {
+    background:#eee;
+    padding-top:4px;
+    z-index:200;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #c5d9ec;
+}
+
+#nav .active a, #nav .inactive {
+    display:block;
+    float:left;
+    width:115px;
+    height:26px;
+    color:#555;
+    text-align:center;
+    font-weight:bold;
+    margin-top:1px;
+    margin-right:5px;
+    position:relative;
+}
+
+#nav .inactive a {
+    color:#555;
+    display:block;
+}
+
+#nav .active a {
+    background:url(../images/tab-bg.png) top left no-repeat;
+    color:#004a80;
+}
+
+#nav .inactive ul {
+    display:none;
+    width:230px;
+    background:#fbfbfb;
+    margin:0;
+    padding:0;
+    position:relative;
+    z-index:500;
+    border-bottom:1px solid #ccc;
+    border-left:1px solid #ccc;
+    border-right:1px solid #ccc;
+}
+
+#nav .inactive li {
+    display:block;
+    margin:0;
+    padding:0 5px;
+    list-style:none;
+    text-align:left;
+}
+
+#nav .inactive:hover {
+    background:url(../images/tab-bg.png) bottom left no-repeat;
+}
+
+#nav .inactive:hover ul {
+    display:block;
+    -moz-box-shadow: 3px 3px 3px #ccc;
+    -webkit-box-shadow: 3px 3px 3px #ccc;
+    box-shadow: 3px 3px 3px #ccc;
+}
+
+#nav .inactive li {
+    background:#fbfbfb;
+}
+
+#nav .inactive li a {
+    padding-left:24px;
+    background-position:0 50%;
+    background-repeat:no-repeat;
+    font-weight:normal;
+    background-color:#fbfbfb;
+}
+
+#nav .inactive li a:hover {
+    color:#E65524;
+}
+
+#sub_nav {
+    background:#f7f7f7;
+    border-bottom:1px solid #bebebe;
+}
+
+#sub_nav a {
+    display:block;
+    float:left;
+    margin-right:10px;
+    padding:0 10px 0 21px;
+    background-position:0 50%;
+    background-repeat:no-repeat;
+    color:#000;
+}
+
+#sub_nav a:hover {
+    color:#E65524;
+}
+
+#sub_nav a.active {
+    font-weight:bold;
+}
+
+#sub_nav .open     { background-image:url(../images/icons/open.gif) }
+#sub_nav .answered { background-image:url(../images/icons/answered.gif) }
+#sub_nav .mine     { background-image:url(../images/icons/mine.gif) }
+#sub_nav .closed   { background-image:url(../images/icons/closed.gif) }
+#sub_nav .new      { background-image:url(../images/icons/new.gif) }
