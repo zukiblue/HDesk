@@ -5,7 +5,7 @@ $info = ($_POST && $errors)?Format::htmlchars($_POST):array();
 <body id="loginBody">
 <div id="loginBox">
     <h1 id="logo"><a href="index.php">.......</a></h1>
-    <h3><?php/* echo Format::htmlchars($msg);*/ ?></h3>
+    <h3><?php echo /*Format::htmlchars(*/$msg; ?></h3>
     <form action="login.php" method="post">
         <?php /*csrf_token();*/ ?>
         <input type="hidden" name="do" value="scplogin">

@@ -12,6 +12,11 @@ if ((isset($_POST["username"])) && (isset($_POST["passwd"])) ) {//&& ($_SESSION[
     if( $auth->login( $_POST["username"], $_POST["passwd"], $_POST["recaptcha_challenge_field"], $_POST["recaptcha_response_field"]) ){          
         redirectToURL("index.php");
     }  
+    else {
+        $msg = $auth->error_message?$auth->error_message:'Invalid login';
+                //$errors['err']?$errors['err']:'Invalid login';
+        
+    }
     //$_SESSION['_staff']=array(); #Uncomment to disable login strikes.
   /*
       if(($user=User::login($_POST['username'], $_POST['passwd'], $errors))){
@@ -22,8 +27,7 @@ if ((isset($_POST["username"])) && (isset($_POST["passwd"])) ) {//&& ($_SESSION[
         exit;@
     }
 */
-    $msg = $errors['err']?$errors['err']:'Invalid login';
-    echo $msg;
+ //   echo $msg;
 }
 //define("OSTSCPINC",TRUE); //Make includes happy!
 require('header_simple.inc.php');

@@ -355,13 +355,13 @@ class Auth {
     function HandleError($err)
     {
         $this->error_message .= $err."\r\n";
-        echo $this->error_message;
-        die;
+        //echo $this->error_message;
+        //die;
     }
     
     function HandleDBError($err)
     {
-        $this->HandleError($err."\r\n mysqlerror:".mysql_error());
+        $this->HandleError($err."\r\n mysql error:".mysql_error());
     }
 
 }

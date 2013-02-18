@@ -7,7 +7,6 @@
     See LICENSE.TXT for details.
 
 **************************************************************************/
-
 //header( 'Location: ./admin/') ;
 require_once('core.php');
 
