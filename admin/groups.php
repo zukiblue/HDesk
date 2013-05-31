@@ -3,8 +3,10 @@
 $page_title = 'Groups';
 
 require_once('../core.php');
+
 $group=null;
 
+$auth->requireAuthentication(0);
 
 //auth_reauthenticate();
 //access_ensure_global_level( config_get( 'manage_site_threshold' ) );
@@ -89,21 +91,21 @@ if($_REQUEST['id'] && !($group=Group::lookup($_REQUEST['id'])))
     }
 }
 */
+
 // valid group - and adding
 if($group || ($_REQUEST['a'] && !strcasecmp($_REQUEST['a'],'add')))
     $page='group.inc.php';
 else
     $page='groups.inc.php';
 
-$nav->setTabActive('staff');
+//$nav->setTabActive('staff');
 
 require('header.inc.php');
 
-$auth->requireAuthentication(0);
 /*/if(!defined('OSTADMININC') || !$user|| !$user->isAdmin())
     echo 'Access Denied'; 
 else { */   
     require($page);
 //}
-include(STAFFINC_DIR.'footer.inc.php');
+include('footer.inc.php');
 ?>

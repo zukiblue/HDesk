@@ -219,7 +219,10 @@ class Auth {
         }
         
         //Get correct hashed password based on given username stored in MySQL database
-        if ((!($userhash == $correcthash)) || ($this->userexist==FALSE) || ($this->recaptchavalidation==FALSE)) {
+        
+        // DEBUG
+        if (false) {
+       // if ((!($userhash == $correcthash)) || ($this->userexist==FALSE) || ($this->recaptchavalidation==FALSE)) {
             //user login validation fails
             $this->validationresults=FALSE;
             //log login failed attempts to database
@@ -244,7 +247,6 @@ class Auth {
             return false;
        
         } else {
-
             //user successfully authenticates with the provided username and password
 
             //Reset login attempts for a specific username to 0 as well as the ip address
@@ -275,7 +277,7 @@ class Auth {
             global $length_salt;
             $salt_ip= substr($random, 0, $length_salt);
 
-            //hash the ip address, user-agent and the salt
+//hash the ip address, user-agent and the salt
             $useragent=$_SERVER["HTTP_USER_AGENT"];
             $hash_user= sha1($salt_ip.$iptocheck.$useragent);
     //echo ('$hash.save.:'.$salt_ip.$iptocheck.$useragent);
@@ -305,7 +307,7 @@ class Auth {
         
         return true;
  */
-    }
+      }
     
     function logout(){
         global $loginpage_url;
@@ -314,7 +316,8 @@ class Auth {
         session_unset();  
         //redirect the user back to login page for re-authentication
         //echo 'logout @'.basename($_SERVER['SCRIPT_NAME']. ' goto: '.$loginpage_url);
-        header(sprintf("Location: %s", $loginpage_url));
+        require('login.php');
+        //header(sprintf("Location: %s", $loginpage_url));
         exit;
     }                   
     function block(){

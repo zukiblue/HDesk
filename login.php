@@ -30,9 +30,10 @@ if ((isset($_POST["username"])) && (isset($_POST["passwd"])) ) {//&& ($_SESSION[
  //   echo $msg;
 }
 //define("OSTSCPINC",TRUE); //Make includes happy!
-require('header_simple.inc.php');
+require('header.inc.php');
+die('111');
+require('login.php');
+die('111');
 
-include('login.tpl');
-
-include('footer_simple.inc.php');
+//include('footer.inc.php');
 ?>

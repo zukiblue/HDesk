@@ -62,6 +62,7 @@ if($ost->isUpgradePending()) {
 //Page title.
 //$ost->setPageTitle('osTicket :: Admin Control Panel');
 
+
 function dynRoot() 
 {   /*
      /hdesk/index.php         $levels = 2
@@ -81,8 +82,6 @@ function dynRoot()
 
   return $relativeDir; 
 }    
-
-
 
 
 ?>

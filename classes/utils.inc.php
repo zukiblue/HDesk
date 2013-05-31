@@ -31,7 +31,7 @@ function sanitizeForSQL($str)
 
 function redirectToURL($url)
 {
-    header("Location: $url");
+    header('Location: '.$url);
     exit;
 }
 

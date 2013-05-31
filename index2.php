@@ -9,10 +9,12 @@
 **************************************************************************/
 //header( 'Location: ./admin/') ;
 require_once('core.php');
-require('header.inc.php');
-//$auth->requireAuthentication(0);
+
+//require('header.inc.php');
+$auth->requireAuthentication(0);
+exit;
 //require($page);
-echo '<center><img src="img/index.jpg"></center>';
+echo 'INDEX 2 - Im in';
 
 include('footer.inc.php');
 
