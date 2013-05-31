@@ -16,8 +16,8 @@ if ( file_exists( 'offline.php' ) && !isset( $_GET['admin'] ) ) {
 */
 
 //Define some constants.
-define('OSTADMININC',TRUE); //checked by admin include files
-define('ADMINPAGE',TRUE);   //Used by the header to swap menus.
+//define('OSTADMININC',TRUE); //checked by admin include files
+//define('ADMINPAGE',TRUE);   //Used by the header to swap menus.
 //Some security related warnings - bitch until fixed!!! :)
  $sysnotice= '';
 /*
@@ -57,7 +57,7 @@ if($ost->isUpgradePending()) {
 //$ost->setWarning($sysnotice);
 
 //Admin navigation - overwrites what was set in staff.inc.php
-$nav = new AdminNav($thisstaff);
+//2013 $nav = new AdminNav($thisstaff);
     
 //Page title.
 //$ost->setPageTitle('osTicket :: Admin Control Panel');
@@ -81,6 +81,8 @@ function dynRoot()
 
   return $relativeDir; 
 }    
+
+
 
 
 ?>

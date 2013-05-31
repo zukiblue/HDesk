@@ -1,6 +1,10 @@
 <?php
-require_once('core.php');
+// PAGE TITLE
+$page_title = 'Groups';
+
+require_once('../core.php');
 $group=null;
+
 
 //auth_reauthenticate();
 //access_ensure_global_level( config_get( 'manage_site_threshold' ) );
@@ -93,7 +97,7 @@ else
 
 $nav->setTabActive('staff');
 
-require(STAFFINC_DIR.'header.inc.php');
+require('header.inc.php');
 
 $auth->requireAuthentication(0);
 /*/if(!defined('OSTADMININC') || !$user|| !$user->isAdmin())

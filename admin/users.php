@@ -1,4 +1,6 @@
 <?php
+$page_title = 'Users';
+
 require_once('../core.php');
 require_once('users.class.php');
 $users = Users::init();
@@ -7,6 +9,16 @@ $rec = null;
 $recs = null;
 
 setMode();
+/*function setMode() {
+    global $mode;
+    if ( isset($_GET['id']) )
+        $mode = 'edit';
+    elseif ( isset($_GET['a']) && strcasecmp($_GET['a'], 'add')===0 )
+        $mode = 'add';
+    else
+        $mode = 'browse';
+}
+ */
 
 if ( $mode==='edit' ) {
     if ( !($rec = $users->loadRecord($_GET['id'])) ) {
@@ -55,7 +67,7 @@ if ($mode==='edit' || $mode==='add') // || $user || ($_REQUEST['a'] && !strcasec
 else
     $page='users.inc.php';
 
-$nav->setTabActive('staff');
+// $nav->setTabActive('staff');
 
 require('header.inc.php');
 //$auth->requireAuthentication(0);

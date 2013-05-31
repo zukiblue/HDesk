@@ -1,15 +1,16 @@
 <?php  
 if(basename($_SERVER['SCRIPT_NAME'])==basename(__FILE__)) die('Access denied..');
 
-// Stats - for page request time
-$g_request_time = microtime(true);
-
 // Set Dir constants
 $d = DIRECTORY_SEPARATOR; // "\\" on Win, '/' Linux,...
 $rootpath = dirname(__FILE__).$d;
 
 // Include default configuration settings
 require_once( $rootpath.'config'.$d.'configdefaults.inc.php' );
+
+// Stats - for page request time
+// if $Debug
+$g_request_time = microtime(true);
 
 // config.inc may not be present if this is a new install
 if ( file_exists( $rootpath.'config'.$d.'config.inc.php' ) ) {
@@ -36,17 +37,14 @@ $class_path   = $rootpath.'classes'.$d;
 $class_path2  = $rootpath.'admin'.$d.'classes'.$d;
 $include_path  = $rootpath.'include'.$d;
 $include_path2 = $rootpath.'admin'.$d.'include'.$d;
-//$include_pear  = $rootpath.'..'.$d.'include'.$d.'/pear'.$d;
 
 $path = array($class_path,
               $class_path2,
               $include_path,
               $include_path2,
-  //            $include_pear,
               get_include_path()
              );
 set_include_path( implode( PATH_SEPARATOR, $path ) ); // ';' on Win, ':' on Linux,...
-//echo var_dump($path);   
 
 // Unset global variables that are no longer needed.
 unset( $d, $rootpath, $class_path, $include_path, $include_path2, /*$include_pear,*/ $path );
@@ -108,7 +106,7 @@ unset( $d, $rootpath, $class_path, $include_path, $include_path2, /*$include_pea
     require(INCLUDE_DIR.'class.timezone.php');
     require(INCLUDE_DIR.'class.http.php');
 */
-    require('class.nav.php');
+//    require('class.nav.php');
  //   require('class.format.php'); //format helpers
 /*
     require(INCLUDE_DIR.'class.validator.php'); //Class to help with basic form input validation...please help improve it.
@@ -268,7 +266,7 @@ if($ost->isUpgradePending() && !$exempt) {
     $sysnotice.=' <a href="settings.php">Enable</a>.';
 }*/
 
-$nav = new StaffNav($user);
+//2013 $nav = new StaffNav($user);
 //Check for forced password change.
 /*if($user->forcePasswdChange() && !$exempt) {
     # XXX: Call staffLoginPage() for AJAX and API requests _not_ to honor

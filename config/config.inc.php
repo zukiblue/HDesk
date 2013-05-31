@@ -29,6 +29,9 @@ define('TABLE_PREFIX','hd_');
 #$g_allowanonymouslogin = 0;
 #$g_anonymousaccount = 'guest';
 
+//
+define('APP_TITLE','HDesk - Admin');
+
 # Redefine base url
 # Ex: $domain = $domain.'/hdesk/';
 $domain = $domain.'/hdesk/';

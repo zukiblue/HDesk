@@ -47,7 +47,7 @@
     
     
     <ul id="nav">
-        <?php
+        <?php /*
         if(($tabs=$nav->getTabs()) && is_array($tabs)){
             foreach($tabs as $name =>$tab) {
                 echo sprintf('<li class="%s"><a href="%s">%s</a>',$tab['active']?'active':'inactive',$tab['href'],$tab['desc']);
@@ -61,11 +61,11 @@
                 }
                 echo "\n</li>\n";
             }            
-        } 
+        } */
         ?>
     </ul>
     <ul id="sub_nav">
-        <?php
+        <?php /*
         if(($subnav=$nav->getSubMenu()) && is_array($subnav)){
             $activeMenu=$nav->getActiveMenu();
             if($activeMenu>0 && !isset($subnav[$activeMenu-1]))
@@ -85,7 +85,7 @@
                 echo sprintf('<li><a class="%s" href="%s" title="%s" >%s</a></li>',$class,$item['href'],$item['title'],$item['desc']);
             }
         }
-        
+        */
         ?>
     </ul>
     <div id="content">
